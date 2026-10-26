@@ -1,0 +1,1130 @@
+/* Portfolio theme */
+:root {
+  --navy: #14213D; /* Defines the primary navy theme color. */
+  --teal: #00A896; /* Defines the main teal accent color. */
+  --teal-ink: #007F74; /* Defines the darker, more readable teal for text. */
+  --warm-white: #F8F7F2; /* Defines the warm-white page and text color. */
+  --paper: #FFFFFF; /* Defines the white surface color. */
+  --ink-muted: #657080; /* Defines the muted text color. */
+  --line: rgba(20, 33, 61, 0.11); /* Defines the shared subtle border color. */
+  --teal-soft: rgba(0, 168, 150, 0.1); /* Defines a translucent teal surface color. */
+  --shadow-soft: 0 18px 50px rgba(20, 33, 61, 0.08); /* Defines the shared soft shadow. */
+  --shadow-card: 0 14px 36px rgba(20, 33, 61, 0.07); /* Defines the shared card shadow. */
+}
+
+html {
+  scroll-behavior: smooth; /* Sets how the page moves when scrolling to a link target. */
+  scroll-padding-top: 5rem; /* Leaves space above anchored sections for the sticky header. */
+}
+
+body {
+  margin: 0; /* Sets the element margins. */
+  color: var(--navy); /* Sets the text or foreground color. */
+  background: var(--warm-white); /* Sets the background color, gradient, or image. */
+  font-family: "Aptos", "Segoe UI", sans-serif; /* Sets the typeface stack. */
+  line-height: 1.7; /* Sets the line spacing. */
+  overflow-x: hidden; /* Controls horizontal overflow to prevent unwanted side scrolling. */
+}
+
+img {
+  display: block; /* Sets how the element participates in layout. */
+  max-width: 100%; /* Limits the element maximum width. */
+}
+
+a {
+  color: inherit; /* Sets the text or foreground color. */
+}
+
+a:focus-visible,
+input:focus-visible + .navbar-toggler {
+  outline: 3px solid var(--teal); /* Sets the a CSS property. */
+  outline-offset: 4px; /* Sets the gap between the outline and the element. */
+}
+
+.site-header {
+  position: sticky; /* Sets the positioning method. */
+  top: 0; /* Sets the distance from the top positioning edge. */
+  z-index: 1000; /* Sets the stacking order relative to nearby elements. */
+}
+
+.portfolio-nav {
+  min-height: 82px; /* Sets the element minimum height. */
+  padding: 0.85rem 0; /* Sets the element padding. */
+  background: rgba(248, 247, 242, 0.93); /* Sets the background color, gradient, or image. */
+  border-bottom: 2px solid rgba(0, 168, 150, 0.38); /* Sets the bottom border width, style, and color. */
+  box-shadow: 0 5px 18px rgba(20, 33, 61, 0.055); /* Adds depth with an outer shadow. */
+  backdrop-filter: blur(14px); /* Applies a visual effect to content behind the element. */
+}
+
+.portfolio-nav .container {
+  flex-wrap: wrap; /* Sets whether flex items wrap onto additional lines. */
+}
+
+.navbar-brand,
+.footer-brand {
+  display: inline-flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  gap: 0.65rem; /* Sets the spacing between layout items. */
+  color: var(--navy); /* Sets the text or foreground color. */
+  font-size: 1rem; /* Sets the text size. */
+  font-weight: 750; /* Sets the text weight. */
+  letter-spacing: -0.025em; /* Sets the spacing between characters. */
+  text-decoration: none; /* Sets link or text decoration. */
+}
+
+.navbar-brand:hover,
+.footer-brand:hover {
+  color: var(--navy); /* Sets the text or foreground color. */
+}
+
+.brand-mark {
+  display: grid; /* Sets how the element participates in layout. */
+  width: 36px; /* Sets the element width. */
+  height: 36px; /* Sets the element height. */
+  place-items: center; /* Aligns grid items within their cells. */
+  color: var(--warm-white); /* Sets the text or foreground color. */
+  background: var(--navy); /* Sets the background color, gradient, or image. */
+  border-radius: 11px; /* Rounds the element corners. */
+  font-family: Georgia, serif; /* Sets the typeface stack. */
+  font-size: 1.15rem; /* Sets the text size. */
+}
+
+.nav-toggle {
+  position: absolute; /* Sets the positioning method. */
+  width: 1px; /* Sets the element width. */
+  height: 1px; /* Sets the element height. */
+  overflow: hidden; /* Controls how content outside the element box is handled. */
+  clip-path: inset(50%); /* Clips the element to the specified visible shape. */
+  white-space: nowrap; /* Controls how whitespace and line wrapping are handled. */
+}
+
+.navbar-toggler {
+  display: inline-flex; /* Sets how the element participates in layout. */
+  width: 46px; /* Sets the element width. */
+  height: 42px; /* Sets the element height. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  justify-content: center; /* Distributes items along the main axis. */
+  margin: 0 0 0 auto; /* Sets the element margins. */
+  padding: 0.55rem; /* Sets the element padding. */
+  border: 1px solid var(--line); /* Sets the border width, style, and color. */
+  border-radius: 12px; /* Rounds the element corners. */
+  cursor: pointer; /* Sets the pointer appearance when hovering the element. */
+}
+
+.menu-bars {
+  display: flex; /* Sets how the element participates in layout. */
+  width: 20px; /* Sets the element width. */
+  flex-direction: column; /* Sets the direction of the flex layout. */
+  gap: 4px; /* Sets the spacing between layout items. */
+}
+
+.menu-bars span {
+  display: block; /* Sets how the element participates in layout. */
+  height: 2px; /* Sets the element height. */
+  background: var(--navy); /* Sets the background color, gradient, or image. */
+  border-radius: 2px; /* Rounds the element corners. */
+  transition: transform 180ms ease, opacity 180ms ease; /* Animates the listed property changes smoothly. */
+}
+
+.nav-toggle:checked + .navbar-toggler .menu-bars span:first-child {
+  transform: translateY(6px) rotate(45deg); /* Applies a visual transform to the element. */
+}
+
+.nav-toggle:checked + .navbar-toggler .menu-bars span:nth-child(2) {
+  opacity: 0; /* Sets the element transparency. */
+}
+
+.nav-toggle:checked + .navbar-toggler .menu-bars span:last-child {
+  transform: translateY(-6px) rotate(-45deg); /* Applies a visual transform to the element. */
+}
+
+.portfolio-nav .navbar-collapse {
+  flex-basis: 100%; /* Sets the starting size of the flex item. */
+  flex-grow: 1; /* Sets how much the flex item can grow into available space. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+}
+
+.nav-toggle:checked ~ .navbar-collapse {
+  display: block; /* Sets how the element participates in layout. */
+}
+
+.portfolio-nav .navbar-nav {
+  gap: 0.35rem; /* Sets the spacing between layout items. */
+  padding: 0.8rem 0 0.25rem; /* Sets the element padding. */
+}
+
+.portfolio-nav .nav-link {
+  position: relative; /* Sets the positioning method. */
+  display: inline-block; /* Sets how the element participates in layout. */
+  padding: 0.65rem 0.8rem; /* Sets the element padding. */
+  color: rgba(20, 33, 61, 0.72); /* Sets the text or foreground color. */
+  font-size: 0.9rem; /* Sets the text size. */
+  font-weight: 600; /* Sets the text weight. */
+  transition: color 180ms ease; /* Animates the listed property changes smoothly. */
+}
+
+.portfolio-nav .nav-link::after {
+  position: absolute; /* Sets the positioning method. */
+  right: 0.8rem; /* Sets the distance from the right positioning edge. */
+  bottom: 0.35rem; /* Sets the distance from the bottom positioning edge. */
+  left: 0.8rem; /* Sets the distance from the left positioning edge. */
+  height: 2px; /* Sets the element height. */
+  background: var(--teal); /* Sets the background color, gradient, or image. */
+  content: ""; /* Sets generated content for the pseudo-element. */
+  transform: scaleX(0); /* Applies a visual transform to the element. */
+  transform-origin: left; /* Sets the origin point used for transforms. */
+  transition: transform 180ms ease; /* Animates the listed property changes smoothly. */
+}
+
+.portfolio-nav .nav-link:hover,
+.portfolio-nav .nav-link:focus-visible,
+.portfolio-nav .nav-link.active {
+  color: var(--navy); /* Sets the text or foreground color. */
+}
+
+.portfolio-nav .nav-link:hover::after,
+.portfolio-nav .nav-link:focus-visible::after,
+.portfolio-nav .nav-link.active::after {
+  transform: scaleX(1); /* Applies a visual transform to the element. */
+}
+
+.portfolio-nav .nav-contact {
+  margin-top: 0.3rem; /* Sets the top margin. */
+  padding-right: 1rem; /* Sets the right padding. */
+  padding-left: 1rem; /* Sets the left padding. */
+  color: var(--navy); /* Sets the text or foreground color. */
+  border: 1px solid rgba(20, 33, 61, 0.2); /* Sets the border width, style, and color. */
+  border-radius: 999px; /* Rounds the element corners. */
+}
+
+.portfolio-nav .nav-contact::after {
+  display: none; /* Sets how the element participates in layout. */
+}
+
+.portfolio-nav .nav-contact:hover {
+  color: var(--warm-white); /* Sets the text or foreground color. */
+  background: var(--navy); /* Sets the background color, gradient, or image. */
+  border-color: var(--navy); /* Sets the border color. */
+}
+
+/* Hero */
+.hero-section {
+  position: relative; /* Sets the positioning method. */
+  overflow: hidden; /* Controls how content outside the element box is handled. */
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0 clamp(5rem, 8vw, 7.75rem); /* Sets the element padding. */
+  background:
+    radial-gradient(ellipse at 85% 18%, rgba(0, 168, 150, 0.1), transparent 27rem),
+    linear-gradient(135deg, var(--warm-white) 0%, #F4F4EF 100%); /* Sets the background color, gradient, or image. */
+}
+
+.hero-section::before {
+  position: absolute; /* Sets the positioning method. */
+  top: 8%; /* Sets the distance from the top positioning edge. */
+  left: -13rem; /* Sets the distance from the left positioning edge. */
+  width: 24rem; /* Sets the element width. */
+  height: 24rem; /* Sets the element height. */
+  border: 1px solid rgba(0, 168, 150, 0.12); /* Sets the border width, style, and color. */
+  border-radius: 50%; /* Rounds the element corners. */
+  content: ""; /* Sets generated content for the pseudo-element. */
+}
+
+.hero-copy {
+  position: relative; /* Sets the positioning method. */
+  z-index: 1; /* Sets the stacking order relative to nearby elements. */
+}
+
+.eyebrow {
+  margin: 0 0 1.15rem; /* Sets the element margins. */
+  color: #47716E; /* Sets the text or foreground color. */
+  font-size: 0.72rem; /* Sets the text size. */
+  font-weight: 750; /* Sets the text weight. */
+  letter-spacing: 0.16em; /* Sets the spacing between characters. */
+  line-height: 1.5; /* Sets the line spacing. */
+}
+
+.hero-copy .eyebrow {
+  display: flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  gap: 0.7rem; /* Sets the spacing between layout items. */
+}
+
+.eyebrow-line {
+  display: inline-block; /* Sets how the element participates in layout. */
+  width: 28px; /* Sets the element width. */
+  height: 1px; /* Sets the element height. */
+  background: var(--teal); /* Sets the background color, gradient, or image. */
+}
+
+.hero-copy h1 {
+  margin: 0; /* Sets the element margins. */
+  font-family: Georgia, "Times New Roman", serif; /* Sets the typeface stack. */
+  font-size: clamp(3.5rem, 7.5vw, 6.5rem); /* Sets the text size. */
+  font-weight: 500; /* Sets the text weight. */
+  letter-spacing: -0.07em; /* Sets the spacing between characters. */
+  line-height: 0.99; /* Sets the line spacing. */
+}
+
+.hero-copy h1 span,
+.section-heading h2 span {
+  color: var(--teal-ink); /* Sets the text or foreground color. */
+  font-style: italic; /* Sets the text style. */
+  font-weight: 400; /* Sets the text weight. */
+}
+
+.hero-intro {
+  max-width: 520px; /* Limits the element maximum width. */
+  margin: 1.7rem 0 0.85rem; /* Sets the element margins. */
+  color: #4C5869; /* Sets the text or foreground color. */
+  font-size: clamp(1.04rem, 1.6vw, 1.18rem); /* Sets the text size. */
+  line-height: 1.8; /* Sets the line spacing. */
+}
+
+.hero-roles {
+  display: flex; /* Sets how the element participates in layout. */
+  flex-wrap: wrap; /* Sets whether flex items wrap onto additional lines. */
+  gap: 0.55rem; /* Sets the spacing between layout items. */
+  max-width: 550px; /* Limits the element maximum width. */
+  margin: 1.25rem 0 0; /* Sets the element margins. */
+  padding: 0; /* Sets the element padding. */
+  list-style: none; /* Controls the appearance of list markers. */
+}
+
+.hero-roles li {
+  padding: 0.35rem 0.72rem; /* Sets the element padding. */
+  color: var(--teal-ink); /* Sets the text or foreground color. */
+  background: rgba(0, 168, 150, 0.08); /* Sets the background color, gradient, or image. */
+  border: 1px solid rgba(0, 127, 116, 0.17); /* Sets the border width, style, and color. */
+  border-radius: 999px; /* Rounds the element corners. */
+  font-size: 0.79rem; /* Sets the text size. */
+  font-weight: 650; /* Sets the text weight. */
+  line-height: 1.5; /* Sets the line spacing. */
+}
+
+.hero-actions {
+  display: flex; /* Sets how the element participates in layout. */
+  flex-wrap: wrap; /* Sets whether flex items wrap onto additional lines. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  gap: 1.65rem; /* Sets the spacing between layout items. */
+  margin-top: 2rem; /* Sets the top margin. */
+}
+
+.btn-primary-custom,
+.btn-light-custom {
+  display: inline-flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  justify-content: center; /* Distributes items along the main axis. */
+  gap: 1.1rem; /* Sets the spacing between layout items. */
+  min-height: 52px; /* Sets the element minimum height. */
+  padding: 0.8rem 1.25rem; /* Sets the element padding. */
+  border-radius: 9px; /* Rounds the element corners. */
+  font-size: 0.9rem; /* Sets the text size. */
+  font-weight: 650; /* Sets the text weight. */
+  text-decoration: none; /* Sets link or text decoration. */
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease; /* Animates the listed property changes smoothly. */
+}
+
+.btn-primary-custom {
+  color: var(--warm-white); /* Sets the text or foreground color. */
+  background: var(--navy); /* Sets the background color, gradient, or image. */
+  box-shadow: 0 8px 20px rgba(20, 33, 61, 0.14); /* Adds depth with an outer shadow. */
+}
+
+.btn-primary-custom:hover {
+  color: var(--warm-white); /* Sets the text or foreground color. */
+  background: #20345C; /* Sets the background color, gradient, or image. */
+  box-shadow: 0 12px 25px rgba(20, 33, 61, 0.2); /* Adds depth with an outer shadow. */
+  transform: translateY(-2px); /* Applies a visual transform to the element. */
+}
+
+.btn-primary-custom > span,
+.text-link > span {
+  color: var(--teal); /* Sets the text or foreground color. */
+  font-size: 1.15em; /* Sets the text size. */
+  transition: transform 180ms ease; /* Animates the listed property changes smoothly. */
+}
+
+.text-link > span {
+  color: var(--teal-ink); /* Sets the text or foreground color. */
+}
+
+.btn-primary-custom:hover > span,
+.text-link:hover > span {
+  transform: translate(2px, -2px); /* Applies a visual transform to the element. */
+}
+
+.text-link {
+  display: inline-flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  gap: 0.65rem; /* Sets the spacing between layout items. */
+  color: var(--navy); /* Sets the text or foreground color. */
+  font-size: 0.9rem; /* Sets the text size. */
+  font-weight: 650; /* Sets the text weight. */
+  text-decoration: none; /* Sets link or text decoration. */
+}
+
+.text-link:hover {
+  color: var(--navy); /* Sets the text or foreground color. */
+}
+
+.hero-note {
+  display: flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  gap: 0.6rem; /* Sets the spacing between layout items. */
+  margin-top: 3rem; /* Sets the top margin. */
+  color: var(--ink-muted); /* Sets the text or foreground color. */
+  font-size: 0.8rem; /* Sets the text size. */
+  letter-spacing: 0.02em; /* Sets the spacing between characters. */
+}
+
+.hero-note span {
+  color: var(--teal-ink); /* Sets the text or foreground color. */
+  font-size: 1.15rem; /* Sets the text size. */
+}
+
+.hero-visual {
+  position: relative; /* Sets the positioning method. */
+  display: flex; /* Sets how the element participates in layout. */
+  justify-content: center; /* Distributes items along the main axis. */
+}
+
+.portrait-frame {
+  position: relative; /* Sets the positioning method. */
+  z-index: 1; /* Sets the stacking order relative to nearby elements. */
+  width: min(100%, 380px); /* Sets the element width. */
+  padding: 12px 12px 74px; /* Sets the element padding. */
+  background: rgba(255, 255, 255, 0.62); /* Sets the background color, gradient, or image. */
+  border: 1px solid rgba(255, 255, 255, 0.86); /* Sets the border width, style, and color. */
+  border-radius: 190px 190px 22px 22px; /* Rounds the element corners. */
+  box-shadow: 0 25px 70px rgba(20, 33, 61, 0.15); /* Adds depth with an outer shadow. */
+  backdrop-filter: blur(10px); /* Applies a visual effect to content behind the element. */
+  transform: rotate(1.5deg); /* Applies a visual transform to the element. */
+}
+
+.hero-portrait {
+  width: 100%; /* Sets the element width. */
+  aspect-ratio: 4 / 5; /* Keeps the element at the specified width-to-height ratio. */
+  object-fit: cover; /* Controls how replaced content fills its box. */
+  object-position: center 39%; /* Sets the crop focal point inside the image box. */
+  border-radius: 180px 180px 14px 14px; /* Rounds the element corners. */
+}
+
+.portrait-caption {
+  position: absolute; /* Sets the positioning method. */
+  right: 1.2rem; /* Sets the distance from the right positioning edge. */
+  bottom: 1.15rem; /* Sets the distance from the bottom positioning edge. */
+  left: 1.2rem; /* Sets the distance from the left positioning edge. */
+  display: flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  gap: 0.75rem; /* Sets the spacing between layout items. */
+  transform: rotate(-1.5deg); /* Applies a visual transform to the element. */
+}
+
+.caption-dot {
+  width: 9px; /* Sets the element width. */
+  height: 9px; /* Sets the element height. */
+  flex: 0 0 auto; /* Sets the flex item sizing and shrink behavior. */
+  background: var(--teal); /* Sets the background color, gradient, or image. */
+  border-radius: 50%; /* Rounds the element corners. */
+  box-shadow: 0 0 0 5px var(--teal-soft); /* Adds depth with an outer shadow. */
+}
+
+.portrait-caption strong,
+.portrait-caption small {
+  display: block; /* Sets how the element participates in layout. */
+}
+
+.portrait-caption strong {
+  font-size: 0.83rem; /* Sets the text size. */
+}
+
+.portrait-caption small {
+  color: var(--ink-muted); /* Sets the text or foreground color. */
+  font-size: 0.72rem; /* Sets the text size. */
+}
+
+.visual-orbit {
+  position: absolute; /* Sets the positioning method. */
+  z-index: 0; /* Sets the stacking order relative to nearby elements. */
+  display: block; /* Sets how the element participates in layout. */
+  border: 1px solid rgba(0, 168, 150, 0.2); /* Sets the border width, style, and color. */
+  border-radius: 50%; /* Rounds the element corners. */
+}
+
+.orbit-one {
+  top: 2%; /* Sets the distance from the top positioning edge. */
+  right: 0; /* Sets the distance from the right positioning edge. */
+  width: 112px; /* Sets the element width. */
+  height: 112px; /* Sets the element height. */
+}
+
+.orbit-two {
+  bottom: 8%; /* Sets the distance from the bottom positioning edge. */
+  left: -1%; /* Sets the distance from the left positioning edge. */
+  width: 70px; /* Sets the element width. */
+  height: 70px; /* Sets the element height. */
+  background: rgba(0, 168, 150, 0.08); /* Sets the background color, gradient, or image. */
+}
+
+/* Shared section rhythm */
+.section-block {
+  padding: clamp(4.5rem, 8vw, 7.25rem) 0; /* Sets the element padding. */
+}
+
+.section-heading {
+  margin-bottom: 2.8rem; /* Sets the bottom margin. */
+}
+
+.section-heading h2,
+.contact-panel h2 {
+  margin: 0; /* Sets the element margins. */
+  font-family: Georgia, "Times New Roman", serif; /* Sets the typeface stack. */
+  font-size: clamp(2.3rem, 4.5vw, 3.7rem); /* Sets the text size. */
+  font-weight: 500; /* Sets the text weight. */
+  letter-spacing: -0.055em; /* Sets the spacing between characters. */
+  line-height: 1.08; /* Sets the line spacing. */
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 0.9rem; /* Sets the bottom margin. */
+}
+
+.about-section {
+  background: var(--paper); /* Sets the background color, gradient, or image. */
+}
+
+.about-section .section-heading {
+  margin-bottom: 3.3rem; /* Sets the bottom margin. */
+}
+
+.about-photo-grid {
+  position: relative; /* Sets the positioning method. */
+  width: min(100%, 430px); /* Sets the element width. */
+  min-height: 440px; /* Sets the element minimum height. */
+  margin: 0 auto; /* Sets the element margins. */
+}
+
+.about-photo {
+  position: absolute; /* Sets the positioning method. */
+  overflow: hidden; /* Controls how content outside the element box is handled. */
+  margin: 0; /* Sets the element margins. */
+  background: #E9ECE8; /* Sets the background color, gradient, or image. */
+  border: 8px solid var(--warm-white); /* Sets the border width, style, and color. */
+  border-radius: 12px; /* Rounds the element corners. */
+  box-shadow: var(--shadow-soft); /* Adds depth with an outer shadow. */
+}
+
+.about-photo img {
+  width: 100%; /* Sets the element width. */
+  height: 100%; /* Sets the element height. */
+  object-fit: cover; /* Controls how replaced content fills its box. */
+}
+
+.about-photo-main {
+  top: 0; /* Sets the distance from the top positioning edge. */
+  left: 0; /* Sets the distance from the left positioning edge. */
+  width: 72%; /* Sets the element width. */
+  height: 370px; /* Sets the element height. */
+  transform: rotate(-3deg); /* Applies a visual transform to the element. */
+}
+
+.about-photo-main img {
+  object-position: center 35%; /* Sets the crop focal point inside the image box. */
+}
+
+.about-photo-accent {
+  right: 0; /* Sets the distance from the right positioning edge. */
+  bottom: 0; /* Sets the distance from the bottom positioning edge. */
+  width: 54%; /* Sets the element width. */
+  height: 200px; /* Sets the element height. */
+  border-width: 6px; /* Sets the border thickness. */
+  transform: rotate(4deg); /* Applies a visual transform to the element. */
+}
+
+.about-photo-accent img {
+  object-position: center 32%; /* Sets the crop focal point inside the image box. */
+}
+
+.photo-stamp {
+  position: absolute; /* Sets the positioning method. */
+  z-index: 1; /* Sets the stacking order relative to nearby elements. */
+  top: 28px; /* Sets the distance from the top positioning edge. */
+  right: 5%; /* Sets the distance from the right positioning edge. */
+  display: grid; /* Sets how the element participates in layout. */
+  width: 92px; /* Sets the element width. */
+  height: 92px; /* Sets the element height. */
+  place-content: center; /* Aligns the grid content within its container. */
+  color: var(--warm-white); /* Sets the text or foreground color. */
+  background: var(--teal-ink); /* Sets the background color, gradient, or image. */
+  border: 5px solid var(--paper); /* Sets the border width, style, and color. */
+  border-radius: 50%; /* Rounds the element corners. */
+  font-size: 0.58rem; /* Sets the text size. */
+  font-weight: 750; /* Sets the text weight. */
+  letter-spacing: 0.1em; /* Sets the spacing between characters. */
+  line-height: 1.6; /* Sets the line spacing. */
+  text-align: center; /* Sets the horizontal text alignment. */
+  transform: rotate(9deg); /* Applies a visual transform to the element. */
+}
+
+.about-copy {
+  padding-left: clamp(1rem, 4vw, 4.5rem); /* Sets the left padding. */
+}
+
+.about-copy p {
+  color: #596474; /* Sets the text or foreground color. */
+  font-size: 0.98rem; /* Sets the text size. */
+}
+
+.about-copy .about-lead {
+  color: var(--navy); /* Sets the text or foreground color. */
+  font-family: Georgia, "Times New Roman", serif; /* Sets the typeface stack. */
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem); /* Sets the text size. */
+  line-height: 1.5; /* Sets the line spacing. */
+}
+
+.about-link {
+  margin-top: 0.6rem; /* Sets the top margin. */
+}
+
+.projects-section {
+  background:
+    radial-gradient(ellipse at 5% 90%, rgba(0, 168, 150, 0.07), transparent 28rem),
+    #F2F3EF; /* Sets the background color, gradient, or image. */
+}
+
+.section-heading-row {
+  display: flex; /* Sets how the element participates in layout. */
+  align-items: end; /* Aligns flex or grid items on the cross axis. */
+  justify-content: space-between; /* Distributes items along the main axis. */
+  gap: 1.5rem; /* Sets the spacing between layout items. */
+}
+
+.section-aside {
+  margin: 0 0 0.35rem; /* Sets the element margins. */
+  color: var(--ink-muted); /* Sets the text or foreground color. */
+  font-size: 0.9rem; /* Sets the text size. */
+}
+
+.project-grid {
+  align-items: stretch; /* Aligns flex or grid items on the cross axis. */
+}
+
+.project-grid > div {
+  display: flex; /* Sets how the element participates in layout. */
+}
+
+.project-card {
+  position: relative; /* Sets the positioning method. */
+  display: flex; /* Sets how the element participates in layout. */
+  width: 100%; /* Sets the element width. */
+  min-height: 100%; /* Sets the element minimum height. */
+  flex-direction: column; /* Sets the direction of the flex layout. */
+  padding: 1.45rem; /* Sets the element padding. */
+  background: rgba(255, 255, 255, 0.84); /* Sets the background color, gradient, or image. */
+  border: 1px solid rgba(20, 33, 61, 0.08); /* Sets the border width, style, and color. */
+  border-radius: 13px; /* Rounds the element corners. */
+  box-shadow: 0 8px 25px rgba(20, 33, 61, 0.035); /* Adds depth with an outer shadow. */
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; /* Animates the listed property changes smoothly. */
+}
+
+.project-card:hover {
+  border-color: rgba(0, 168, 150, 0.35); /* Sets the border color. */
+  box-shadow: var(--shadow-card); /* Adds depth with an outer shadow. */
+  transform: translateY(-6px); /* Applies a visual transform to the element. */
+}
+
+.project-card-top {
+  display: flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  justify-content: space-between; /* Distributes items along the main axis. */
+  margin-bottom: 1.55rem; /* Sets the bottom margin. */
+}
+
+.project-index {
+  color: #728092; /* Sets the text or foreground color. */
+  font-size: 0.75rem; /* Sets the text size. */
+  font-weight: 700; /* Sets the text weight. */
+  letter-spacing: 0.12em; /* Sets the spacing between characters. */
+}
+
+.project-symbol {
+  display: grid; /* Sets how the element participates in layout. */
+  width: 39px; /* Sets the element width. */
+  height: 39px; /* Sets the element height. */
+  place-items: center; /* Aligns grid items within their cells. */
+  color: var(--teal-ink); /* Sets the text or foreground color. */
+  background: var(--teal-soft); /* Sets the background color, gradient, or image. */
+  border-radius: 12px; /* Rounds the element corners. */
+  font-size: 1.25rem; /* Sets the text size. */
+}
+
+.project-type {
+  margin: 0 0 0.45rem; /* Sets the element margins. */
+  color: #47716E; /* Sets the text or foreground color. */
+  font-size: 0.62rem; /* Sets the text size. */
+  font-weight: 750; /* Sets the text weight. */
+  letter-spacing: 0.12em; /* Sets the spacing between characters. */
+}
+
+.project-card h3 {
+  margin: 0 0 0.7rem; /* Sets the element margins. */
+  font-family: Georgia, "Times New Roman", serif; /* Sets the typeface stack. */
+  font-size: 1.35rem; /* Sets the text size. */
+  font-weight: 600; /* Sets the text weight. */
+  letter-spacing: -0.03em; /* Sets the spacing between characters. */
+  line-height: 1.25; /* Sets the line spacing. */
+}
+
+.project-card > p:not(.project-type) {
+  margin: 0; /* Sets the element margins. */
+  color: #657080; /* Sets the text or foreground color. */
+  font-size: 0.84rem; /* Sets the text size. */
+  line-height: 1.75; /* Sets the line spacing. */
+}
+
+.project-detail {
+  display: flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  justify-content: space-between; /* Distributes items along the main axis. */
+  gap: 0.5rem; /* Sets the spacing between layout items. */
+  margin-top: auto; /* Sets the top margin. */
+  padding-top: 1.45rem; /* Sets the top padding. */
+  color: var(--navy); /* Sets the text or foreground color. */
+  font-size: 0.72rem; /* Sets the text size. */
+  font-weight: 650; /* Sets the text weight. */
+}
+
+.project-detail span {
+  color: var(--teal-ink); /* Sets the text or foreground color. */
+  font-size: 1rem; /* Sets the text size. */
+}
+
+.skills-section {
+  background:
+    radial-gradient(ellipse at 92% 7%, rgba(0, 168, 150, 0.15), transparent 25rem),
+    linear-gradient(135deg, #14213D 0%, #1A2C4C 100%); /* Sets the background color, gradient, or image. */
+}
+
+.skills-section .section-heading h2 {
+  color: var(--warm-white); /* Sets the text or foreground color. */
+}
+
+.skills-section .section-heading h2 span {
+  color: #47D0BD; /* Sets the text or foreground color. */
+}
+
+.skills-grid > div {
+  display: flex; /* Sets how the element participates in layout. */
+}
+
+.skill-card {
+  width: 100%; /* Sets the element width. */
+  padding: 1.2rem 1.25rem 1.3rem; /* Sets the element padding. */
+  background: rgba(248, 247, 242, 0.97); /* Sets the background color, gradient, or image. */
+  border: 1px solid rgba(248, 247, 242, 0.65); /* Sets the border width, style, and color. */
+  border-radius: 12px; /* Rounds the element corners. */
+  box-shadow: 0 10px 25px rgba(4, 12, 26, 0.12); /* Adds depth with an outer shadow. */
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; /* Animates the listed property changes smoothly. */
+}
+
+.skill-card:hover {
+  border-color: rgba(0, 168, 150, 0.65); /* Sets the border color. */
+  box-shadow: 0 14px 32px rgba(4, 12, 26, 0.2); /* Adds depth with an outer shadow. */
+  transform: translateY(-3px); /* Applies a visual transform to the element. */
+}
+
+.skill-card-heading {
+  display: flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  gap: 0.75rem; /* Sets the spacing between layout items. */
+  margin-bottom: 1rem; /* Sets the bottom margin. */
+}
+
+.skill-icon {
+  display: grid; /* Sets how the element participates in layout. */
+  width: 35px; /* Sets the element width. */
+  height: 35px; /* Sets the element height. */
+  flex: 0 0 auto; /* Sets the flex item sizing and shrink behavior. */
+  place-items: center; /* Aligns grid items within their cells. */
+  color: var(--teal-ink); /* Sets the text or foreground color. */
+  background: var(--teal-soft); /* Sets the background color, gradient, or image. */
+  border-radius: 10px; /* Rounds the element corners. */
+  font-size: 0.83rem; /* Sets the text size. */
+  font-weight: 750; /* Sets the text weight. */
+}
+
+.skill-card h3 {
+  margin: 0; /* Sets the element margins. */
+  font-size: 0.9rem; /* Sets the text size. */
+  font-weight: 700; /* Sets the text weight. */
+  letter-spacing: -0.015em; /* Sets the spacing between characters. */
+}
+
+.skill-badges {
+  display: flex; /* Sets how the element participates in layout. */
+  flex-wrap: wrap; /* Sets whether flex items wrap onto additional lines. */
+  gap: 0.45rem; /* Sets the spacing between layout items. */
+}
+
+.skill-badges span {
+  padding: 0.28rem 0.62rem; /* Sets the element padding. */
+  color: var(--navy); /* Sets the text or foreground color. */
+  background: rgba(0, 168, 150, 0.075); /* Sets the background color, gradient, or image. */
+  border: 1px solid rgba(0, 127, 116, 0.12); /* Sets the border width, style, and color. */
+  border-radius: 999px; /* Rounds the element corners. */
+  font-size: 0.72rem; /* Sets the text size. */
+  line-height: 1.45; /* Sets the line spacing. */
+}
+
+.contact-section {
+  padding: 0 0 clamp(4rem, 7vw, 6rem); /* Sets the element padding. */
+  background: var(--warm-white); /* Sets the background color, gradient, or image. */
+}
+
+.contact-panel {
+  position: relative; /* Sets the positioning method. */
+  display: flex; /* Sets how the element participates in layout. */
+  min-height: 290px; /* Sets the element minimum height. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  justify-content: space-between; /* Distributes items along the main axis. */
+  gap: 2rem; /* Sets the spacing between layout items. */
+  overflow: hidden; /* Controls how content outside the element box is handled. */
+  padding: clamp(2rem, 6vw, 4.25rem); /* Sets the element padding. */
+  color: var(--warm-white); /* Sets the text or foreground color. */
+  background:
+    radial-gradient(ellipse at 88% 10%, rgba(0, 168, 150, 0.23), transparent 22rem),
+    linear-gradient(120deg, #14213D, #1B2D50); /* Sets the background color, gradient, or image. */
+  border-radius: 18px; /* Rounds the element corners. */
+  box-shadow: 0 22px 50px rgba(20, 33, 61, 0.17); /* Adds depth with an outer shadow. */
+}
+
+.contact-panel .eyebrow {
+  color: #8DCEC5; /* Sets the text or foreground color. */
+}
+
+.contact-panel h2 {
+  position: relative; /* Sets the positioning method. */
+  z-index: 1; /* Sets the stacking order relative to nearby elements. */
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem); /* Sets the text size. */
+}
+
+.contact-panel > div > p:last-child {
+  margin: 1rem 0 0; /* Sets the element margins. */
+  color: rgba(248, 247, 242, 0.7); /* Sets the text or foreground color. */
+  font-size: 0.92rem; /* Sets the text size. */
+}
+
+.contact-actions {
+  position: relative; /* Sets the positioning method. */
+  z-index: 1; /* Sets the stacking order relative to nearby elements. */
+  display: flex; /* Sets how the element participates in layout. */
+  flex: 0 0 auto; /* Sets the flex item sizing and shrink behavior. */
+  flex-direction: column; /* Sets the direction of the flex layout. */
+  align-items: flex-start; /* Aligns flex or grid items on the cross axis. */
+  gap: 0.85rem; /* Sets the spacing between layout items. */
+}
+
+.btn-light-custom {
+  gap: 0.55rem; /* Sets the spacing between layout items. */
+  color: var(--navy); /* Sets the text or foreground color. */
+  background: var(--warm-white); /* Sets the background color, gradient, or image. */
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.13); /* Adds depth with an outer shadow. */
+}
+
+.btn-light-custom:hover {
+  color: var(--navy); /* Sets the text or foreground color. */
+  background: #FFFFFF; /* Sets the background color, gradient, or image. */
+  box-shadow: 0 13px 28px rgba(0, 0, 0, 0.2); /* Adds depth with an outer shadow. */
+  transform: translateY(-2px); /* Applies a visual transform to the element. */
+}
+
+.btn-light-custom .contact-action-icon {
+  color: var(--teal-ink); /* Sets the text or foreground color. */
+  font-size: 1.1rem; /* Sets the text size. */
+}
+
+.btn-light-custom .contact-number {
+  font-size: 0.82rem; /* Sets the text size. */
+  font-weight: 550; /* Sets the text weight. */
+  white-space: nowrap; /* Controls how whitespace and line wrapping are handled. */
+}
+
+.contact-email {
+  color: rgba(248, 247, 242, 0.8); /* Sets the text or foreground color. */
+  font-size: 0.79rem; /* Sets the text size. */
+  text-decoration-color: rgba(248, 247, 242, 0.4); /* Sets the text decoration color. */
+  text-underline-offset: 3px; /* Sets the distance between text and its underline. */
+}
+
+.contact-email:hover {
+  color: var(--warm-white); /* Sets the text or foreground color. */
+}
+
+.contact-orbit {
+  position: absolute; /* Sets the positioning method. */
+  right: 17%; /* Sets the distance from the right positioning edge. */
+  bottom: -110px; /* Sets the distance from the bottom positioning edge. */
+  width: 270px; /* Sets the element width. */
+  height: 270px; /* Sets the element height. */
+  border: 1px solid rgba(248, 247, 242, 0.13); /* Sets the border width, style, and color. */
+  border-radius: 50%; /* Rounds the element corners. */
+}
+
+.site-footer {
+  padding: 2.3rem 0 1.25rem; /* Sets the element padding. */
+  color: var(--warm-white); /* Sets the text or foreground color. */
+  background: #101B31; /* Sets the background color, gradient, or image. */
+  border-top: 3px solid var(--teal); /* Sets the top border width, style, and color. */
+}
+
+.site-footer .container {
+  display: flex; /* Sets how the element participates in layout. */
+  flex-direction: column; /* Sets the direction of the flex layout. */
+}
+
+.footer-brand {
+  color: var(--warm-white); /* Sets the text or foreground color. */
+  font-family: Georgia, "Times New Roman", serif; /* Sets the typeface stack. */
+  font-size: 1.25rem; /* Sets the text size. */
+}
+
+.footer-brand:hover {
+  color: var(--warm-white); /* Sets the text or foreground color. */
+}
+
+.footer-message p {
+  margin: 0.35rem 0 0; /* Sets the element margins. */
+  color: rgba(248, 247, 242, 0.63); /* Sets the text or foreground color. */
+  font-size: 0.82rem; /* Sets the text size. */
+}
+
+.footer-main {
+  display: flex; /* Sets how the element participates in layout. */
+  align-items: center; /* Aligns flex or grid items on the cross axis. */
+  justify-content: space-between; /* Distributes items along the main axis. */
+  gap: 1.5rem; /* Sets the spacing between layout items. */
+  padding-bottom: 1.8rem; /* Sets the bottom padding. */
+}
+
+.footer-connect {
+  display: flex; /* Sets how the element participates in layout. */
+  flex-direction: column; /* Sets the direction of the flex layout. */
+  gap: 0.15rem; /* Sets the spacing between layout items. */
+}
+
+.footer-connect > span {
+  color: rgba(248, 247, 242, 0.63); /* Sets the text or foreground color. */
+  font-size: 0.76rem; /* Sets the text size. */
+}
+
+.footer-connect a {
+  color: #75DACA; /* Sets the text or foreground color. */
+  font-size: 0.9rem; /* Sets the text size. */
+  font-weight: 650; /* Sets the text weight. */
+  text-decoration: none; /* Sets link or text decoration. */
+}
+
+.footer-connect a:hover {
+  color: var(--warm-white); /* Sets the text or foreground color. */
+}
+
+.footer-connect a span {
+  display: inline-block; /* Sets how the element participates in layout. */
+  margin-left: 0.2rem; /* Sets the left margin. */
+  transition: transform 180ms ease; /* Animates the listed property changes smoothly. */
+}
+
+.footer-connect a:hover span {
+  transform: translate(2px, -2px); /* Applies a visual transform to the element. */
+}
+
+.back-to-top {
+  color: rgba(248, 247, 242, 0.78); /* Sets the text or foreground color. */
+  font-size: 0.78rem; /* Sets the text size. */
+  font-weight: 600; /* Sets the text weight. */
+  text-decoration: none; /* Sets link or text decoration. */
+}
+
+.back-to-top:hover {
+  color: #75DACA; /* Sets the text or foreground color. */
+}
+
+.footer-bottom {
+  display: flex; /* Sets how the element participates in layout. */
+  flex-wrap: wrap; /* Sets whether flex items wrap onto additional lines. */
+  justify-content: space-between; /* Distributes items along the main axis. */
+  gap: 0.45rem 1rem; /* Sets the spacing between layout items. */
+  padding-top: 1rem; /* Sets the top padding. */
+  border-top: 1px solid rgba(248, 247, 242, 0.14); /* Sets the top border width, style, and color. */
+}
+
+.footer-bottom p,
+.footer-bottom a,
+.footer-bottom span {
+  margin: 0; /* Sets the element margins. */
+  color: rgba(248, 247, 242, 0.55); /* Sets the text or foreground color. */
+  font-size: 0.72rem; /* Sets the text size. */
+  text-decoration: none; /* Sets link or text decoration. */
+}
+
+.footer-bottom a:hover {
+  color: var(--warm-white); /* Sets the text or foreground color. */
+}
+
+@media (min-width: 992px) {
+  .portfolio-nav .container {
+    flex-wrap: nowrap; /* Sets whether flex items wrap onto additional lines. */
+  }
+
+  .navbar-toggler,
+  .nav-toggle {
+    display: none; /* Sets how the element participates in layout. */
+  }
+
+  .portfolio-nav .navbar-collapse {
+    display: flex !important; /* Sets how the element participates in layout. */
+    flex-basis: auto; /* Sets the starting size of the flex item. */
+  }
+
+  .portfolio-nav .navbar-nav {
+    gap: 0.25rem; /* Sets the spacing between layout items. */
+    padding: 0; /* Sets the element padding. */
+  }
+
+  .portfolio-nav .nav-contact {
+    margin: 0 0 0 0.35rem; /* Sets the element margins. */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-heading-row {
+    display: block; /* Sets how the element participates in layout. */
+  }
+
+  .section-aside {
+    margin-top: 1rem; /* Sets the top margin. */
+  }
+
+  .about-copy {
+    padding-left: calc(var(--bs-gutter-x) * 0.5); /* Sets the left padding. */
+  }
+
+  .about-photo-grid {
+    min-height: 390px; /* Sets the element minimum height. */
+    max-width: 390px; /* Limits the element maximum width. */
+  }
+
+  .about-photo-main {
+    height: 330px; /* Sets the element height. */
+  }
+
+  .about-photo-accent {
+    height: 165px; /* Sets the element height. */
+  }
+
+  .contact-panel {
+    align-items: flex-start; /* Aligns flex or grid items on the cross axis. */
+    flex-direction: column; /* Sets the direction of the flex layout. */
+  }
+}
+
+@media (max-width: 575.98px) {
+  .portfolio-nav {
+    min-height: 70px; /* Sets the element minimum height. */
+  }
+
+  .hero-section {
+    padding-top: 4rem; /* Sets the top padding. */
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.25rem, 15vw, 4.5rem); /* Sets the text size. */
+  }
+
+  .hero-roles {
+    max-width: 400px; /* Limits the element maximum width. */
+    line-height: 1.9; /* Sets the line spacing. */
+  }
+
+  .hero-actions {
+    align-items: flex-start; /* Aligns flex or grid items on the cross axis. */
+    flex-direction: column; /* Sets the direction of the flex layout. */
+    gap: 1rem; /* Sets the spacing between layout items. */
+  }
+
+  .hero-note {
+    margin-top: 2rem; /* Sets the top margin. */
+  }
+
+  .portrait-frame {
+    width: min(88%, 330px); /* Sets the element width. */
+  }
+
+  .about-photo-grid {
+    min-height: 350px; /* Sets the element minimum height. */
+    max-width: 340px; /* Limits the element maximum width. */
+  }
+
+  .about-photo-main {
+    height: 300px; /* Sets the element height. */
+  }
+
+  .about-photo-accent {
+    width: 57%; /* Sets the element width. */
+    height: 145px; /* Sets the element height. */
+  }
+
+  .photo-stamp {
+    width: 78px; /* Sets the element width. */
+    height: 78px; /* Sets the element height. */
+    font-size: 0.52rem; /* Sets the text size. */
+  }
+
+  .project-card {
+    min-height: 280px; /* Sets the element minimum height. */
+  }
+
+  .contact-panel {
+    padding: 2rem 1.5rem; /* Sets the element padding. */
+  }
+
+  .contact-actions {
+    max-width: 100%; /* Keeps contact actions within the panel on narrow screens. */
+  }
+
+  .contact-actions .btn-light-custom {
+    max-width: 100%; /* Prevents long contact labels from widening the page. */
+    flex-wrap: wrap; /* Allows the email address to move onto another line. */
+    justify-content: flex-start; /* Keeps wrapped button content aligned to the left. */
+  }
+
+  .btn-light-custom .contact-number {
+    white-space: normal; /* Allows the email address to wrap on narrow screens. */
+    overflow-wrap: anywhere; /* Breaks the address only if needed to prevent overflow. */
+  }
+
+  .footer-main {
+    align-items: flex-start; /* Aligns flex or grid items on the cross axis. */
+    flex-direction: column; /* Sets the direction of the flex layout. */
+    gap: 1.2rem; /* Sets the spacing between layout items. */
+  }
+
+  .footer-bottom {
+    flex-direction: column; /* Sets the direction of the flex layout. */
+    gap: 0.4rem; /* Sets the spacing between layout items. */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto; /* Sets how the page moves when scrolling to a link target. */
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important; /* Sets how the page moves when scrolling to a link target. */
+    transition-duration: 0.01ms !important; /* Sets how long the property transition lasts. */
+    animation-duration: 0.01ms !important; /* Sets the animation playback duration. */
+    animation-iteration-count: 1 !important; /* Sets how many times the animation repeats. */
+  }
+}
